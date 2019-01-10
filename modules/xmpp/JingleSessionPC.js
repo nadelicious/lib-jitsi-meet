@@ -1649,6 +1649,8 @@ export default class JingleSessionPC extends JingleSession {
             // can be added to the peer connection.
             // Transition from no video to video (possibly screen sharing)
             if (!oldTrack && newTrack && newTrack.isVideoTrack()) {
+                logger.info('Transition from no video to video');
+
                 // Clearing current primary SSRC will make
                 // the SdpConsistency generate a new one which will result
                 // with:
@@ -1658,6 +1660,8 @@ export default class JingleSessionPC extends JingleSession {
 
             // Transition from video to no video
             } else if (oldTrack && oldTrack.isVideoTrack() && !newTrack) {
+                logger.info('Transition from video to no video');
+
                 // Clearing current primary SSRC and generating the recvonly
                 // will result in:
                 // 1. source-remove for the old video stream
