@@ -708,6 +708,8 @@ export default class JitsiLocalTrack extends JitsiTrack {
                 = this._facingMode === CameraFacingMode.ENVIRONMENT
                     ? CameraFacingMode.USER
                     : CameraFacingMode.ENVIRONMENT;
+
+            logger.info('switch camera - facing mode', this._facingMode);
         }
     }
 

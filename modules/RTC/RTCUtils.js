@@ -1007,6 +1007,8 @@ class RTCUtils extends Listenable {
      * @returns {Promise}
      */
     _newGetUserMediaWithConstraints(umDevices, constraints = {}) {
+        logger.log('constraints', constraints);
+
         return new Promise((resolve, reject) => {
             navigator.mediaDevices.getUserMedia(constraints)
                 .then(stream => {
